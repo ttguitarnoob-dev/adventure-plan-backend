@@ -12,7 +12,7 @@ router.get('/:id', async (req, res) => {
         res.json(oneAdventure)
         // res.send('show route')
     } catch(err){
-        console.log('show route errrerrr', err)
+        res.json('show route errrerrr', err.message)
     }
 })
 
@@ -25,7 +25,6 @@ router.get('/', async (req, res) => {
         res.json(allAdventures)
         // res.send('index route')
     } catch(err) {
-        console.log(err)
         res.json('indexx errrr', err.message)
     }
 })
@@ -38,13 +37,22 @@ router.post('/', async (req, res) => {
         const newAdventure = await Adventure.create(req.body)
         res.json(newAdventure)
     } catch(err){
-        console.log('create route errr', err)
+        res.json('create route errr', err.message)
     }
 })
 
 
 //delete
+router.delete('/:id', async (req, res) => {
+    try{
+        const oneAdventure = await Adventure.findByIdAndDelete(req.params.id)
+        console.log("I don't need you, adventure", oneAdventure)
+        res.json(oneAdventure)
+    } catch(err) {
+        res.json('delete route errrrrr', err.message)
+    }
 
+})
 
 
 //update
