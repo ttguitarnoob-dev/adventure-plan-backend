@@ -1,4 +1,5 @@
 const express = require('express')
+const { update } = require('../models/adventure')
 const Adventure = require('../models/adventure')
 const router = express.Router()
 
@@ -56,5 +57,14 @@ router.delete('/:id', async (req, res) => {
 
 
 //update
+router.put('/:id', async (req, res) => {
+    try{
+        const updateAdventure = await Adventure.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        console.log('you need to change, adventure', updateAdventure)
+        res.json(updateAdventure)
+    } catch(err) {
+        res.json('update route erererror', err.message)
+    }
+})
 
 module.exports = router
