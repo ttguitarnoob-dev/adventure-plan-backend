@@ -5,7 +5,16 @@ const router = express.Router()
 //ROUTES
 
 //show
-
+router.get('/:id', async (req, res) => {
+    try{
+        const oneAdventure = await Adventure.findById(req.params.id)
+        console.log('one adventures', oneAdventure)
+        res.json(oneAdventure)
+        // res.send('show route')
+    } catch(err){
+        console.log('show route errrerrr', err)
+    }
+})
 
 
 //index
