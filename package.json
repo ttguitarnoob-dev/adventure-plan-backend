@@ -1,0 +1,25 @@
+{
+  "name": "adventure-plan-backend",
+  "version": "1.0.0",
+  "description": "Backend for database stuff on the Adventure Plan App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttguitarnoob-dev/adventure-plan-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttguitarnoob-dev/adventure-plan-backend/issues"
+  },
+  "homepage": "https://github.com/ttguitarnoob-dev/adventure-plan-backend#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1"
+  }
+}
